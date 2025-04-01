@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 from markupsafe import escape
 
 app = Flask(__name__)
@@ -21,3 +21,7 @@ def laptop():
     return("This is laptop page")
 
 app.add_url_rule("/desc","/about",about)
+
+@app.route("/template")
+def template():
+    return render_template("index.html")
